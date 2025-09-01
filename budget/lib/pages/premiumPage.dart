@@ -737,7 +737,7 @@ Future<bool> premiumPopupPushRoute(BuildContext context) async {
 
 Future<bool> premiumPopupBudgets(BuildContext context) async {
   if (hidePremiumPopup()) return true;
-  if ((await database.getAllBudgets()).length > 0) {
+  if ((await database.getAllBudgets()).length > 4) {
     if (await premiumPopupPushRoute(context) == true) {
       return true;
     } else {
@@ -753,7 +753,7 @@ Future<bool> premiumPopupObjectives(BuildContext context,
     {required ObjectiveType objectiveType}) async {
   if (hidePremiumPopup()) return true;
   if ((await database.getAllObjectives(objectiveType: objectiveType)).length >
-      0) {
+      4) {
     if (await premiumPopupPushRoute(context) == true) {
       return true;
     } else {
